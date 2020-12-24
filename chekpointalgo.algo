@@ -1,0 +1,40 @@
+ALGORITHM chekpoint
+VAR
+   nbMots : INTEGER := 1;
+   p ,j,nbVoyelles: INTEGER := 0;
+   i ,k,long: INTEGER ;
+   ph : STRING ;
+   voyelles :STRING := " aeiouy";
+   est_une_voyelle :BOOLEAN := 0;
+BEGIN
+    read(ph)
+    write(ph)
+    if (ph[ph.length]=".")
+        then  long := ph.length
+            write (ph "est une phrase")
+    else write (ph "n'est pas une phrase.")
+    
+    while ( i < long )
+    {
+        while ( ph[i] == " " )
+        i ++;
+        nbMots++;
+        while ( i < long && ph[i] != " " )
+        i ++;
+    }
+    write ("le nombre des mots est: " nbMots) ;
+
+
+    for ( int k = 0; k < long ; k ++)
+    {
+        while ( ! est_une_voyelle && j < voyelles.length)
+        {
+        est_une_voyelle = (ph[k] == voyelles[j] ) ;
+        j ++;
+        }
+        nbVoyelles += est_une_voyelle ;
+    } 
+    write ("le nombre du voyelles: " nbVoyelles) ;
+
+
+END
